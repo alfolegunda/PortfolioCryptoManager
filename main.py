@@ -28,7 +28,7 @@ def main():
     # Calcular el valor del portafolio compuesto únicamente de ETH
     valores_portafolio_eth = calcular_portafolio_eth(valores_portafolio, df_precios_historicos['ETH'])
 
-    # Graficar la comparación de los portafolios
+    # Graficar la comparación de los portafolios g
     graficar_comparacion(fechas, valores_portafolio, valores_portafolio_eth)
 
 if __name__ == '__main__':
