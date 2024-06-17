@@ -1,5 +1,5 @@
 import unittest
-from utils.calculos import calcular_valor_portafolio, calcular_portafolio_eth
+from utils.calculos_portfolios import calcular_valor_portafolio, calcular_portafolio_eth
 import pandas as pd
 
 class TestCalculos(unittest.TestCase):
