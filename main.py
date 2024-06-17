@@ -1,7 +1,7 @@
 import pandas as pd
 from data.precios_historicos import obtener_precios_historicos
 from data.portafolio import obtener_portafolio
-from utils.calculos import calcular_valor_portafolio, calcular_portafolio_eth
+from utils.calculos_portfolios import calcular_valor_portafolio, calcular_portafolio_eth, calcular_portafolio_btc
 from utils.graficos import graficar_comparacion
 from datetime import date, timedelta
 
@@ -18,7 +18,6 @@ def main():
     # Obtener los precios históricos de las criptomonedas
     df_precios_historicos = obtener_precios_historicos(start_date=start_date,
                                                        end_date=end_date)
-
     # Obtener el portafolio
     portafolio = obtener_portafolio()
 
@@ -28,8 +27,22 @@ def main():
     # Calcular el valor del portafolio compuesto únicamente de ETH
     valores_portafolio_eth = calcular_portafolio_eth(valores_portafolio, df_precios_historicos['ETH'])
 
-    # Graficar la comparación de los portafolios g
-    graficar_comparacion(fechas, valores_portafolio, valores_portafolio_eth)
+    # Calcular el valor del portafolio compuesto únicamente de BTC
+    valores_portafolio_btc = calcular_portafolio_btc(valores_portafolio, df_precios_historicos['BTC'])
+
+    # Juntar todos los portafolios en un dataframe
+    datos = {
+        'portfolio': valores_portafolio,
+        'portfolio_eth': valores_portafolio_eth,
+        'portfolio_btc': valores_portafolio_btc
+    }
+
+    df_portafolios = pd.DataFrame(data=datos, index=fechas)
+
+    # Graficar la comparación de los portafolios
+    graficar_comparacion(df_portafolios)
+
+    return df_portafolios
 
 if __name__ == '__main__':
     main()
