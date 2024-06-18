@@ -2,7 +2,7 @@ import pandas as pd
 from data.precios_historicos import obtener_precios_historicos
 from data.portafolio import obtener_portafolio
 from utils.calculos_portfolios import calcular_valor_portafolio, calcular_portafolio_eth, calcular_portafolio_btc
-from utils.graficos import graficar_comparacion
+from utils.graficos import graficar_comparacion, graficar_retornos
 from datetime import date, timedelta
 
 def main():
@@ -41,6 +41,7 @@ def main():
 
     # Graficar la comparación de los portafolios
     graficar_comparacion(df_portafolios)
+    graficar_retornos(df_portafolios)
 
     return df_portafolios
 
