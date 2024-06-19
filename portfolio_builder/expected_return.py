@@ -41,8 +41,8 @@ class ExpectedReturnsCalculator:
 
 
 # # Uso de la clase
-# df_activos = ...  # Reemplaza con tus datos de activos
-# df_benchmark1 = ...  # Reemplaza con tus datos de benchmark
+# df_activos = ...  # Reemplaza con datos de activos
+# df_benchmark1 = ...  # Reemplaza con datos de benchmark
 #
 # calculator = ExpectedReturnsCalculator(df_activos, df_benchmark=df_benchmark1)
 #
