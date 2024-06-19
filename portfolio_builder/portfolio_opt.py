@@ -30,10 +30,10 @@ class PortfolioOptimizer:
         return cleaned_weights
 
 # Uso de la clase
-retornos_CAPM = ...  # Reemplaza con tus datos
-df_cov = ...  # Reemplaza con tus datos
+#retornos_CAPM = ...  # Reemplaza con datos
+#df_cov = ...  # Reemplaza con datos
 
-optimizer = PortfolioOptimizer(retornos_CAPM, df_cov)
+#optimizer = PortfolioOptimizer(retornos_CAPM, df_cov)
 
 # Ejemplo de uso para cada estrategia
 #optimizer.optimize('min_volatility')
